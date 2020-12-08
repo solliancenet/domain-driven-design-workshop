@@ -33,6 +33,16 @@ $WebClient.DownloadFile("https://raw.githubusercontent.com/solliancenet/common-w
 #run the solliance package
 . C:\LabFiles\Common.ps1
 
+cd "c:\labfiles";
+
+CreateCredFile $azureUsername $azurePassword $azureTenantID $azureSubscriptionID $deploymentId $odlId
+
+. C:\LabFiles\AzureCreds.ps1
+
+$userName = $AzureUserName                # READ FROM FILE
+$password = $AzurePassword                # READ FROM FILE
+$clientId = $TokenGeneratorClientId       # READ FROM FILE
+
 CreateLabFilesDirectory;
 
 DisableInternetExplorerESC
@@ -69,21 +79,13 @@ InstallVisualStudio $vsVersion;
 
 UpdateVisualStudio $vsVersion;
 
-AddVisualStudioWorkload $vsVersion "Microsoft.VisualStudio.Workload.Azure" $true;
-AddVisualStudioWorkload $vsVersion "Microsoft.VisualStudio.Workload.NetCoreTools" $true;
-AddVisualStudioWorkload $vsVersion "Microsoft.VisualStudio.Workload.NetWeb" $true;
-AddVisualStudioWorkload $vsVersion "Component.GitHub.VisualStudio" $true;
-AddVisualStudioWorkload $vsVersion "Microsoft.VisualStudio.Component.Git" $true;
-
-cd "c:\labfiles";
-
-CreateCredFile $azureUsername $azurePassword $azureTenantID $azureSubscriptionID $deploymentId $odlId
-
-. C:\LabFiles\AzureCreds.ps1
-
-$userName = $AzureUserName                # READ FROM FILE
-$password = $AzurePassword                # READ FROM FILE
-$clientId = $TokenGeneratorClientId       # READ FROM FILE
+AddVisualStudioWorkload $vsVersion "Microsoft.VisualStudio.Workload.Azure" $vsVersion;
+AddVisualStudioWorkload $vsVersion "Microsoft.VisualStudio.Workload.NetCoreTools" $vsVersion;
+AddVisualStudioWorkload $vsVersion "Microsoft.VisualStudio.Workload.NetWeb" $vsVersion;
+AddVisualStudioWorkload $vsVersion "Component.GitHub.VisualStudio" $vsVersion;
+AddVisualStudioWorkload $vsVersion "Microsoft.VisualStudio.Component.Git" $vsVersion;
+AddVisualStudioWorkload $vsVersion "Microsoft.VisualStudio.Workload.Data" $vsVersion;
+AddVisualStudioWorkload $vsVersion "Microsoft.VisualStudio.Workload.DataScience" $vsVersion;
 
 Uninstall-AzureRm
 
