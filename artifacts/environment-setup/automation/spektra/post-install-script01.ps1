@@ -75,9 +75,10 @@ InstallSmtp4Dev;
 InstallAzureCli;
 
 $vsVersion = "community"
-InstallVisualStudio $vsVersion;
+$year = "2019"
+InstallVisualStudio $vsVersion $year;
 
-UpdateVisualStudio $vsVersion;
+UpdateVisualStudio $vsVersion $year;
 
 AddVisualStudioWorkload $vsVersion "Microsoft.VisualStudio.Workload.Azure" $vsVersion;
 AddVisualStudioWorkload $vsVersion "Microsoft.VisualStudio.Workload.NetCoreTools" $vsVersion;
