@@ -75,18 +75,18 @@ InstallSmtp4Dev;
 InstallAzureCli;
 
 $vsVersion = "community"
-$year = "2019"
+$year = "2019";
 InstallVisualStudio $vsVersion $year;
 
 UpdateVisualStudio $vsVersion $year;
 
-AddVisualStudioWorkload $vsVersion "Microsoft.VisualStudio.Workload.Azure" $vsVersion;
-AddVisualStudioWorkload $vsVersion "Microsoft.VisualStudio.Workload.NetCoreTools" $vsVersion;
-AddVisualStudioWorkload $vsVersion "Microsoft.VisualStudio.Workload.NetWeb" $vsVersion;
-AddVisualStudioWorkload $vsVersion "Component.GitHub.VisualStudio" $vsVersion;
-AddVisualStudioWorkload $vsVersion "Microsoft.VisualStudio.Component.Git" $vsVersion;
-AddVisualStudioWorkload $vsVersion "Microsoft.VisualStudio.Workload.Data" $vsVersion;
-AddVisualStudioWorkload $vsVersion "Microsoft.VisualStudio.Workload.DataScience" $vsVersion;
+AddVisualStudioWorkload $vsVersion "Microsoft.VisualStudio.Workload.Azure";
+AddVisualStudioWorkload $vsVersion "Microsoft.VisualStudio.Workload.NetCoreTools" ;
+AddVisualStudioWorkload $vsVersion "Microsoft.VisualStudio.Workload.NetWeb" ;
+AddVisualStudioWorkload $vsVersion "Component.GitHub.VisualStudio";
+AddVisualStudioWorkload $vsVersion "Microsoft.VisualStudio.Component.Git" ;
+AddVisualStudioWorkload $vsVersion "Microsoft.VisualStudio.Workload.Data" ;
+AddVisualStudioWorkload $vsVersion "Microsoft.VisualStudio.Workload.DataScience" ;
 
 Uninstall-AzureRm
 
